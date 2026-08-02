@@ -4,7 +4,9 @@ public:
         if(index < 0) return 0;
         if(dp[index]!=-1) return dp[index];
         int ans = 0;
-        ans = max(ans , nums[index] + solve(index-2,nums,dp));
+    
+            ans = max(ans,nums[index] + solve(index-2,nums,dp));
+        
         ans = max(ans,solve(index-1,nums,dp));
 
         return dp[index] = ans;
