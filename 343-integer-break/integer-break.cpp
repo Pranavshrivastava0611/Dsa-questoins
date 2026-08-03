@@ -8,7 +8,6 @@ public:
             return count >= 2;
         }
         if(dp[n]!=-1) return dp[n];
-        
         long long ans = INT_MIN;
         for(int i=1;i<=n;i++){
             long long take = i * solve(count +1 ,n-i,dp);
