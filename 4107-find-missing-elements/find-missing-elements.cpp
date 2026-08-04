@@ -1,17 +1,17 @@
 class Solution {
 public:
     vector<int> findMissingElements(vector<int>& nums) {
-        unordered_map<int,int>str;
         int maxi = INT_MIN;
         int mini = INT_MAX;
+        vector<int>str(101,-1);
         for(auto i : nums){
-            str[i]++;
             maxi = max(maxi,i);
             mini = min(mini,i);
+            str[i] = 0;
         }
         vector<int>ans;
         for(int i=mini;i<=maxi;i++){
-            if(str.find(i)==str.end()){
+            if(str[i]==-1){
                 ans.push_back(i);
             }
         }
