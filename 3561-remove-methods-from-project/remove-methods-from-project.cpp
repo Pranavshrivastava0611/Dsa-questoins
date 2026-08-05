@@ -2,10 +2,8 @@ class Solution {
 public:
     vector<int> remainingMethods(int n, int k, vector<vector<int>>& invo) {
         unordered_map<int,vector<int>>adj;
-        vector<int>indegree(n,0);
         for(int i=0;i<invo.size();i++){
             adj[invo[i][0]].push_back(invo[i][1]);
-            indegree[invo[i][1]]++;
         }
         vector<int>ans;
         for(int i=0;i<n;i++){
@@ -39,9 +37,6 @@ public:
                 }
                 ans2.push_back(i);
             }
-        }
-        for(auto i : flag){
-            cout<<i<<" ";
         }
         return ans2;
     }
