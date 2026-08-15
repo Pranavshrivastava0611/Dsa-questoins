@@ -7,7 +7,6 @@ public:
         for (int x : v) {
             hash ^= hash + x + 0x9e3779b9 + (hash << 6) + (hash >> 2);
         }
-
         return hash;
     }
 };
