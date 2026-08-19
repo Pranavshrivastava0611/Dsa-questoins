@@ -37,7 +37,6 @@ public:
         for(int i=0;i<r.size();i++){
             str[r[i][0]].push_back(r[i][1]);
         }
-        // sort(r.begin(),r.end());
         int left = n;
         int total = 0;
         for(auto i : str){
@@ -48,7 +47,6 @@ public:
             total = total + ans;
         }
         total = total + (2*left);
-        cout<<total;
         return total;
     }
 };
