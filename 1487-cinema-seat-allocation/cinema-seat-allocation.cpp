@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int solve(vector<int>&nums,vector<bool>check){
+    int solve(vector<int>&nums,vector<bool>&check){
         for(int i=0;i<nums.size();i++){
             int value = nums[i];
             if(value==6 || value==7){
@@ -43,7 +43,6 @@ public:
             vector<bool>check(3,false);
             left--;
             int ans = solve(i.second,check);
-            cout<<i.first<<" "<<ans<<endl;
             total = total + ans;
         }
         total = total + (2*left);
