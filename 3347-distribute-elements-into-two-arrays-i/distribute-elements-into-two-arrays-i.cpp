@@ -16,13 +16,9 @@ public:
                 index2++;
             }
         }
-        vector<int>result;
-        for(auto i : arr1){
-            result.push_back(i);
-        }
         for(auto i : arr2){
-            result.push_back(i);
+            arr1.push_back(i);
         }
-        return result;
+        return arr1;
     }
 };
