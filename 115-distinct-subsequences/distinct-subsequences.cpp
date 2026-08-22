@@ -3,9 +3,7 @@ public:
     unordered_map<char,bool>store;
      unordered_map<string,int>strr;
     int solve(int index,int &length,string &str,string &s,string &t,vector<vector<int>>&dp){
-        if(str==t){
-            return 1;
-        }
+
         if(index==length){
             return str==t;
         }
