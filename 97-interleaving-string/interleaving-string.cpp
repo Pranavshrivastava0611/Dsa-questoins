@@ -8,14 +8,12 @@ public:
         if(dp[i][j]!=2) return dp[i][j];
 
         bool ans = false;
-        if(s1[i]==s3[index] && s2[j]!=s3[index]){
-            ans = ans || solve(index+1,i+1,j,s1,s2,s3,dp);
+         if (i < s1.length() && s1[i] == s3[index]) {
+            ans = ans || solve(index + 1, i + 1, j, s1, s2, s3, dp);
         }
-        if(s1[i]!=s3[index] && s2[j]==s3[index]){
-            ans = ans || solve(index+1,i,j+1,s1,s2,s3,dp);
-        }
-        if(s1[i]==s3[index] && s2[j]==s3[index]){
-            ans = ans || solve(index+1,i+1,j,s1,s2,s3,dp) || solve(index+1,i,j+1,s1,s2,s3,dp);
+
+        if (j < s2.length() && s2[j] == s3[index]) {
+            ans = ans || solve(index + 1, i, j + 1, s1, s2, s3, dp);
         }
 
         return dp[i][j]= ans;
